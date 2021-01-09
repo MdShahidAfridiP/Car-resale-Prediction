@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Car-resale Prediction</title>
+  </head>
+  <body>
+    {% if prediction %}
+        <div class="alert alert-success" role="alert">
+          The Resale value of your car is {{prediction}}
+        </div>
+    {% endif %}
+    <form action={{ url_for('predict') }}>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" placeholder="Car name" required>
+          <div class="invalid-feedback">
+            Please provide a valid Name.
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="year">Year</label>
+          <input type="text" class="form-control" name="year" placeholder="Year" required>
+          <div class="invalid-feedback">
+            Please provide a valid Year.
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationServer05">Kilometers Driven</label>
+          <input type="text" class="form-control" name="kms" placeholder="Kilometers Driven" required>
+          <div class="invalid-feedback">
+            Please provide a valid Kilometers Driven.
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+        <select class="custom-select" name="owner">
+          <option selected>Owner Type</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four or others</option>
+        </select>
+        </div>
+        <div class="col-md-3 mb-3">
+        <select class="custom-select" name="transmission">
+          <option selected>Transmission</option>
+          <option value="1">Manual</option>
+          <option value="0">Automatic</option>
+        </select>
+        </div>
+        <div class="col-md-2 mb-3">
+        <select class="custom-select" name="fuel">
+          'Diesel', 'LPG', 'Petrol'
+          <option selected>Fuel Type</option>
+          <option value="17">Diesel</option>
+          <option value="19">Petrol</option>
+          <option value="0">CNG</option>
+          <option value="18">LPG</option>
+        </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="validationServer06">Seats</label>
+          <input type="text" class="form-control" name="seats" placeholder="Seats" required>
+          <div class="invalid-feedback">
+            Please provide a valid Seats.
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationServer07">Mileage(km/kg)</label>
+          <input type="text" class="form-control" name="mileage" placeholder="Mileage(km/kg)" required>
+          <div class="invalid-feedback">
+            Please provide a valid Mileage(km/kg).
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationServer08">Engine(CC)</label>
+          <input type="text" class="form-control" name="engine" placeholder="Engine(CC)" required>
+          <div class="invalid-feedback">
+            Please provide a valid Engine(CC).
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="validationServer09">Power(bhp)</label>
+          <input type="text" class="form-control" name="power" placeholder="Power(bhp)" required>
+          <div class="invalid-feedback">
+            Please provide a valid Power(bhp).
+          </div>
+        </div>
+        <select class="custom-select" name="location">
+          <option selected>Location</option>
+          <option value="15">Mumbai</option>
+          <option value="7">Bangalore</option>
+          <option value="8">Chennai</option>
+          <option value="9">Coimbatore</option>
+          <option value="11">Hyderabad</option>
+          <option value="12">Jaipur</option>
+          <option value="13">Kochi</option>
+          <option value="14">Kolkata</option>
+          <option value="10">Delhi</option>
+          <option value="16">Pune</option>
+          <option value="0">Ahmedabad</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" type="submit">Predict Price</button>
+    </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
